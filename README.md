@@ -1,30 +1,18 @@
 # JWST CEERS + UNCOVER Stellar Mass vs U-band Analysis
 
-This repository provides a reproducible Python pipeline for comparing galaxy
-stellar masses and rest-frame/observed U-band AB magnitudes in two JWST legacy
+This repository provides a reproducible Python pipeline for comparing galaxy stellar masses and rest-frame/observed U-band AB magnitudes in two JWST legacy
 fields:
 
-- **CEERS** using `ceers_cat_v1.0.fits` and LePHARE columns such as `LP_Z_MED`,
-  `LP_MASS_MED`, `LP_MASS_MED68_LOW`, and `LP_MASS_MED68_HIGH`.
-- **UNCOVER DR4** using `UNCOVER_DR4_SPS_zspec_catalog.fits` and columns such as
-  `z_spec`, `mstar_50`, `mstar_16`, `mstar_84`, `rest_U_50`, `rest_U_16`, and
-  `rest_U_84`.
+- **CEERS Photometric-z catalog** using `ceers_cat_v1.0.fits`: We use estimates from LePHARE, a software package used to calculate photometric redshifts (photo-z) and estimate physical properties (such as stellar mass and star formation rates) of galaxies.
+- **UNCOVER Spectroscopic-z catalog**: We use stellar mass estimates and AB magnitudes from the latest data release 4.
 
-The goal is to make the analysis easy to audit, rerun, configure, test, and
-extend. The code uses `astropy.table.Table` for FITS catalog input, Astropy
-units for nJy-to-AB magnitude conversion, and `astropy.cosmology.FlatLambdaCDM`
-for distance modulus calculations.
+The goal is to make the analysis easy to audit, rerun, configure, test, and extend. The code reads-in the corresponding fits files, cleans and sorts the data into specific redshift bins (for test case we use two redshift bins here: first, centered on z = 2.0 and second centered on z = 3.6), performs unit conversions wherever necessary and plots the manipulated data as errorbar plots.
 
 ## Scientific motivation
+CEERS and UNCOVER provide deep JWST observations that probe galaxy formation and evolution across cosmic time. This pipeline extracts two redshift slices near
+`z = 2.0` and `z = 3.6`, estimates CEERS rest-frame U-band-like apparent magnitudes from NIRCam fluxes, and compares them against UNCOVER rest-frame U-band catalog quantities as a function of stellar mass. The redshift bins chosen here correspond to the Cosmic Noon epoch, a very crucial era in Cosmology wherein the star formation rates were at a peak and galaxies had evolved to accumulate substantial amount of cosmic dust in their interstellar regions. Insights from U-band magnitudes inform us about the magnitude of role played by cosmic dust in altering the observed U-band light from young stellar populations and how this affects the inferred stellar population properties (in this case, stellar masses). By using the inferred stellar masses, one can interpolate the halo masses for these galaxies. This information, in conjunction with the theoretical halo mass function can then be used to obtain the UV luminosity function i.e. a count of number of galaxies per unit volume per luminosity interval. 
 
-CEERS and UNCOVER provide deep JWST observations that probe galaxy formation and
-evolution across cosmic time. This pipeline extracts two redshift slices near
-`z = 2.0` and `z = 3.6`, estimates CEERS rest-frame U-band-like absolute
-magnitudes from NIRCam fluxes, and compares them against UNCOVER rest-frame
-U-band catalog quantities as a function of stellar mass.
-
-## Relevant public references
-
+## Links to JWST CEERS and UNCOVER data releases and datasets
 - CEERS project page: https://ceers.github.io/
 - CEERS MAST HLSP page: https://archive.stsci.edu/hlsp/ceers
 - CEERS photometric and physical parameter catalog paper: https://arxiv.org/abs/2510.08743
