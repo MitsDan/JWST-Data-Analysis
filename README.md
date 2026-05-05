@@ -116,8 +116,7 @@ jwst_galaxy_analysis_repo/
 
 ```bash
 git clone https://github.com/MitsDan/JWST-Data-Analysis.git
-mkdir jwst_analysis
-cd jwst_analysis
+cd JWST-Data-Analysis
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
