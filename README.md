@@ -133,11 +133,10 @@ sphinx-build -b html docs/source docs/build/html
 
 ## Data placement
 
-Place the FITS catalogs here by default:
+Place the CEERS catalog FITS file here by default (The UNCOVER catalog FITS file is already located in the /data folder):
 
 ```text
 data/ceers_cat_v1.0.fits
-data/UNCOVER_DR4_SPS_zspec_catalog.fits
 ```
 
 You can override paths in `config/default.toml` or pass a different config file:
