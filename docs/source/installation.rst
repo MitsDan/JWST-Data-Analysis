@@ -40,7 +40,7 @@ or from a source checkout:
 
 .. code-block:: bash
 
-   python scripts/run_analysis.py --config config/default.toml
+   python run_analysis.py --config config/default.toml
 
 Run tests
 ---------
