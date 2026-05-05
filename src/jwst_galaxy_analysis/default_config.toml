@@ -1,4 +1,7 @@
 [paths]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
 ceers_catalog = "data/ceers_cat_v1.0.fits"
 uncover_catalog = "data/UNCOVER_DR4_SPS_zspec_catalog.fits"
 output_dir = "outputs"
