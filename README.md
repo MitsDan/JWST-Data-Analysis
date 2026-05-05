@@ -115,7 +115,7 @@ jwst_galaxy_analysis_repo/
 ## Installation
 
 ```bash
-git clone [https://github.com/MitsDan/JWST-Data-Analysis.git](https://github.com/MitsDan/JWST-Data-Analysis.git)
+git clone https://github.com/MitsDan/JWST-Data-Analysis.git
 mkdir jwst_analysis
 cd jwst_analysis
 python -m venv .venv
