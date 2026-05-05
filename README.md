@@ -3,8 +3,8 @@
 This repository provides a reproducible Python pipeline for comparing galaxy stellar masses and rest-frame/observed U-band AB magnitudes in two JWST legacy
 fields:
 
-- **CEERS Photometric-z catalog** using `ceers_cat_v1.0.fits`: We use estimates from LePHARE, a software package used to calculate photometric redshifts (photo-z) and estimate physical properties (such as stellar mass and star formation rates) of galaxies.
-- **UNCOVER Spectroscopic-z catalog**: We use stellar mass estimates and AB magnitudes from the latest data release 4.
+- **[https://ceers.github.io/dr1.html#catalog]CEERS Photometric-z catalog**: We use estimates from LePHARE, a software package used to calculate photometric redshifts (photo-z) and estimate physical properties (such as stellar mass and star formation rates) of galaxies.
+- **[https://jwst-uncover.github.io/DR4.html]UNCOVER Spectroscopic-z catalog**: We use stellar mass estimates and AB magnitudes from the latest data release 4.
 
 The goal is to make the analysis easy to audit, rerun, configure, test, and extend. The code reads-in the corresponding fits files, cleans and sorts the data into specific redshift bins (for test case we use two redshift bins here: first, centered on z = 2.0 and second centered on z = 3.6), performs unit conversions wherever necessary and plots the manipulated data as errorbar plots.
 
@@ -115,7 +115,7 @@ jwst_galaxy_analysis_repo/
 ## Installation
 
 ```bash
-git clone https://github.com/MitsDan/JWST-Data-Analysis.git
+git clone [https://github.com/MitsDan/JWST-Data-Analysis.git]https://github.com/MitsDan/JWST-Data-Analysis.git
 mkdir jwst_analysis
 cd jwst_analysis
 python -m venv .venv
