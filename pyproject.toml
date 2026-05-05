@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jwst-galaxy-analysis"
+version = "0.1.0"
+description = "Efficient CEERS and UNCOVER DR4 stellar-mass versus rest-frame U-band analysis pipeline."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Mitali"}
+]
+keywords = ["astronomy", "jwst", "ceers", "uncover", "astropy", "galaxy-evolution"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Astronomy",
+]
+dependencies = [
+  "astropy>=6.0",
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+docs = ["sphinx>=7.0", "myst-parser>=2.0"]
+test = ["pytest>=8.0"]
+dev = ["build>=1.2", "pytest>=8.0", "sphinx>=7.0", "myst-parser>=2.0", "ruff>=0.5"]
+
+[project.scripts]
+jwst-galaxy-analysis = "jwst_galaxy_analysis.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-org/jwst-galaxy-analysis"
+Repository = "https://github.com/your-org/jwst-galaxy-analysis"
+Issues = "https://github.com/your-org/jwst-galaxy-analysis/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.setuptools.package-data]
+jwst_galaxy_analysis = ["default_config.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

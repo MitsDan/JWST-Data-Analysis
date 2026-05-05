@@ -1,0 +1,55 @@
+[paths]
+ceers_catalog = "data/ceers_cat_v1.0.fits"
+uncover_catalog = "data/UNCOVER_DR4_SPS_zspec_catalog.fits"
+output_dir = "outputs"
+
+[cosmology]
+# FlatLambdaCDM defaults. Override these if your science case requires
+# a different calibration, for example Planck-like values.
+H0 = 70.0
+Om0 = 0.3
+Tcmb0 = 2.725
+
+[ceers]
+redshift_column = "LP_Z_MED"
+z2_name = "z2_ceers"
+z2_min = 1.9
+z2_max = 2.1
+z2_flux_column = "F115W_FLUX"
+z2_flux_error_column = "F115W_FLUXERR_SE"
+z2_reference_redshift = 2.0
+z3_name = "z3_ceers"
+z3_min = 3.5
+z3_max = 3.7
+z3_flux_column = "F150W_FLUX"
+z3_flux_error_column = "F150W_FLUXERR_SE"
+z3_reference_redshift = 3.6
+mass_column = "LP_MASS_MED"
+mass_low_column = "LP_MASS_MED68_LOW"
+mass_high_column = "LP_MASS_MED68_HIGH"
+max_ab_mag_error = 10.0
+max_mass_error = 3.0
+
+[uncover]
+redshift_column = "z_spec"
+z2_name = "z2_uncover"
+z2_min = 1.5
+z2_max = 2.5
+z3_name = "z3_uncover"
+z3_min = 3.0
+z3_max = 4.0
+mass_column = "mstar_50"
+mass_low_column = "mstar_16"
+mass_high_column = "mstar_84"
+rest_u_column = "rest_U_50"
+rest_u_low_column = "rest_U_16"
+rest_u_high_column = "rest_U_84"
+
+[plotting]
+dpi = 300
+marker = "o"
+ceers_color = "#0072B2"
+uncover_color = "#D55E00"
+figsize = [8.0, 6.5]
+z2_filename = "z2_stellar_mass_vs_u_mag.png"
+z3_filename = "z3_stellar_mass_vs_u_mag.png"
