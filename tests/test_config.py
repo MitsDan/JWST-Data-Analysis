@@ -10,8 +10,8 @@ def test_load_config_resolves_paths(tmp_path):
     cfg_file.write_text(
         """
 [paths]
-ceers_catalog = "data/ceers.fits"
-uncover_catalog = "data/uncover.fits"
+ceers_catalog = "data/ceers_cat_v1.0.fits"
+uncover_catalog = "data/UNCOVER_DR4_SPS_zspec_catalog.fits"
 output_dir = "outputs"
 
 [plotting]
@@ -20,7 +20,7 @@ figsize = [7.0, 5.0]
         encoding="utf-8",
     )
     config = load_config(cfg_file)
-    assert config.paths.ceers_catalog == (tmp_path / "data/ceers.fits").resolve()
-    assert config.paths.uncover_catalog == (tmp_path / "data/uncover.fits").resolve()
+    assert config.paths.ceers_catalog == (tmp_path / "data/ceers_cat_v1.0.fits").resolve()
+    assert config.paths.uncover_catalog == (tmp_path / "data/UNCOVER_DR4_SPS_zspec_catalog.fits").resolve()
     assert config.paths.output_dir == (tmp_path / "outputs").resolve()
     assert config.plotting.figsize == (7.0, 5.0)
