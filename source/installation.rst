@@ -6,8 +6,8 @@ Clone and install
 
 .. code-block:: bash
 
-   git clone https://github.com/your-org/jwst-galaxy-analysis.git
-   cd jwst-galaxy-analysis
+   git clone https://github.com/MitsDan/JWST-Data-Analysis.git
+   cd JWST-Data-Analysis
    python -m venv .venv
    source .venv/bin/activate
    python -m pip install --upgrade pip
@@ -23,12 +23,11 @@ Install development dependencies
 Place data files
 ----------------
 
-Place the two FITS files in the default data directory:
+Place the CEERS catalog FITS file here by default (The UNCOVER catalog FITS file is already located in the /data folder):
 
 .. code-block:: text
 
    data/ceers_cat_v1.0.fits
-   data/UNCOVER_DR4_SPS_zspec_catalog.fits
 
 Run the pipeline
 ----------------
@@ -41,7 +40,7 @@ or from a source checkout:
 
 .. code-block:: bash
 
-   python scripts/run_analysis.py --config config/default.toml
+   python run_analysis.py --config config/default.toml
 
 Run tests
 ---------
